@@ -1,5 +1,5 @@
 import com.android.build.gradle.LibraryExtension
-import es.devdiestrolopez.icon.configureKotlinAndroid
+import io.github.devdiestrolopez.icon.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

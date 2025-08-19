@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "es.devdiestrolopez.icon.core.android"
+    namespace = "io.github.devdiestrolopez.icon.core.android"
 
     buildTypes {
         release {

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "es.devdiestrolopez.icon.compose.android"
+    namespace = "io.github.devdiestrolopez.icon.compose.android"
 
     buildTypes {
         release {

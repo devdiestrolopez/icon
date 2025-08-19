@@ -1,7 +1,7 @@
 import com.android.build.api.dsl.ApplicationExtension
-import es.devdiestrolopez.icon.configureAndroidCompose
-import es.devdiestrolopez.icon.implementation
-import es.devdiestrolopez.icon.libs
+import io.github.devdiestrolopez.icon.configureAndroidCompose
+import io.github.devdiestrolopez.icon.implementation
+import io.github.devdiestrolopez.icon.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply

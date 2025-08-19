@@ -4,10 +4,10 @@ plugins {
 }
 
 android {
-    namespace = "es.devdiestrolopez.icon"
+    namespace = "io.github.devdiestrolopez.icon"
 
     defaultConfig {
-        applicationId = "es.devdiestrolopez.icon"
+        applicationId = "io.github.devdiestrolopez.icon"
         versionCode = 1
         versionName = "1.0"
 

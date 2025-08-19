@@ -4,7 +4,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "es.devdiestrolopez.icon.buildLogic"
+group = "io.github.devdiestrolopez.icon.buildLogic"
 
 // Configure the build-logic plugins to target JDK 11
 // This matches the JDK used to build the project, and is not related to what is running on device

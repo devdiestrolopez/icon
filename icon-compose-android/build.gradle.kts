@@ -70,7 +70,7 @@ signing {
 }
 
 dependencies {
-    implementation(projects.iconCoreAndroid)
+    api(projects.iconCoreAndroid)
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.compose.foundation.layout)
 }

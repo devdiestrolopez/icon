@@ -60,6 +60,18 @@ publishing {
                     url = "https://github.com/devdiestrolopez/icon"
                 }
             }
+
+            repositories {
+                maven {
+                    name = "sonatype"
+                    url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+
+                    credentials {
+                        username = project.properties["sonatypeUsername"] as String
+                        password = project.properties["sonatypePassword"] as String
+                    }
+                }
+            }
         }
     }
 }

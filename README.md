@@ -37,11 +37,14 @@ You can use the libraries independently, but for most projects, you'll only need
 ```kotlin
 // build.gradle.kts (module level)
 dependencies {
+  val iconCoreAndroidVersion = <latest-version>
+  val iconComposeAndroidVersion = <latest-version>
+
   // (Optional) Only if the core IconResource and its data classes are needed.
-  implementation("io.github.devdiestrolopez.icon.core:icon-core-android:1.0.0")
+  implementation("io.github.devdiestrolopez.icon.core:icon-core-android:$iconCoreAndroidVersion")
 
   // Automatically provides the public API of icon-core-android.
-  implementation("io.github.devdiestrolopez.icon.compose:icon-compose-android:1.0.0")
+  implementation("io.github.devdiestrolopez.icon.compose:icon-compose-android:$iconComposeAndroidVersion")
 }
 ```
 

@@ -1,3 +1,7 @@
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.devdiestrolopez.icon.core/icon-core-android?label=icon-core-android&style=for-the-badge&logo=android&logoColor=%23FFFFFF)](https://central.sonatype.com/artifact/io.github.devdiestrolopez.icon.core/icon-core-android)
+ [![Maven Central](https://img.shields.io/maven-central/v/io.github.devdiestrolopez.icon.compose/icon-compose-android?label=icon-compose-android&style=for-the-badge&logo=jetpackcompose&logoColor=%23FFFFFF&logoSize=auto)](https://central.sonatype.com/artifact/io.github.devdiestrolopez.icon.compose/icon-compose-android)
+
+
 # The Icon Project
 The Icon project provides a modern, type-safe solution for handling icons in Android applications. It's composed of two distinct libraries to ensure a clean separation of concerns and maximize reusability. The `icon-core-android` library defines the core API, while `icon-compose-android` offers a ready-to-use Composable component for Jetpack Compose.
 
@@ -91,70 +95,25 @@ fun MyScreen() {
 }
 ```
 
-## 🔗 Use with iconset-generator-plugin
+## 🔗 Use with iconset-generator plugin
 These libraries can be used as standalone components. However, their full value is realized when used in conjunction with the `iconset-generator-plugin`. The plugin streamlines icon management by automatically generating type-safe code that can be used directly with these libraries.
 
-### Plugin Setup
-First, add the plugin to your project-level `build.gradle.kts` file.
+To understand how to add the plugin and how it works, please refer to its documentation in the [IconSet Generator Plugin](https://github.com/devdiestrolopez/icon-set-generator)
 
-```kotlin
-// build.gradle.kts (project level)
-plugins {
-  id("io.github.devdiestrolopez.iconset.generator") version "1.0.0" apply false
-}
-```
-
-Next, apply the plugin in the `build.gradle.kts` file of the specific module where the icon resources reside.
-
-```kotlin
-// build.gradle.kts (module level)
-plugins {
-  id("io.gihub.devdiestrolopez.iconset.generator")
-}
-```
-
-Finally, you can customize the output package and file name for the generated code.
-
-```kotlin
-// build.gradle.kts (module level)
-iconSet {
-  // (Optional) The package where the generated class will be created.
-  // By default, this is set to <your_module_package_name>
-  outputPackage.set("com.example.app.ui.icons")
-  
-  // (Optional) The name of the generated Kotlin object.
-  // By default, this is set to "IconSet"
-  fileName.set("AppIcons")
-}
-```
-
-### Generated Output & Usage
-After running a Gradle build, a file similar to the one below will be generated in your build directory. This object can then be used directly with the `Icon` composable from the `icon-compose-android` library.
-
-```kotlin
-// Example generated file: build/generated/source/main/com/example/app/ui/icons/AppIcons.kt
-package com.example.app.ui.icons
-
-object AppIcons {
-  val MyIcon: DrawableResource = DrawableResource(id = R.drawable.ic_my_icon)
-  val AnotherIcon: DrawableResource = DrawableResource(id = R.drawable.ic_another_icon)
-  // ... more icons
-}
-```
-
-### Example Composable Usage:
+## Example Composable Usage
+This example makes use of the generated `IconSet` provided by `iconset-generator` plugin.
 
 ```kotlin
 @Composable
 fun MyScreen() {
   Icon(
-    iconResource = AppIcons.MyIcon,
+    iconResource = IconSet.MyIcon,
     contentDescription = "My first icon",
     modifier = Modifier.size(48.dp)
   )
 
   Icon(
-    iconResource = AppIcons.AnotherIcon,
+    iconResource = IconSet.AnotherIcon,
     contentDescription = "My second icon",
     modifier = Modifier.size(48.dp)
   )

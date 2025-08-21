@@ -63,13 +63,8 @@ publishing {
 
             repositories {
                 maven {
-                    name = "ossrh-staging-api"
-                    url = uri("https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/")
-
-                    credentials {
-                        username = project.properties["sonatypeUsername"] as String
-                        password = project.properties["sonatypePassword"] as String
-                    }
+                    name = "iconComposeAndroid"
+                    url = uri(layout.buildDirectory.dir("repo"))
                 }
             }
         }
@@ -79,6 +74,24 @@ publishing {
 signing {
     useGpgCmd()
     sign(publishing.publications)
+}
+
+tasks.register<Zip>("generateIconComposeAndroidZip") {
+    val publishTask = tasks.named(
+        "publishReleasePublicationToIconComposeAndroidRepository",
+        PublishToMavenRepository::class.java
+    )
+    dependsOn(publishTask)
+
+    val releasePublication = publishing.publications.getByName("release") as MavenPublication
+
+    from(layout.buildDirectory.dir("repo")) {
+        val groupPath = releasePublication.groupId.replace(".", "/")
+        include("$groupPath/**")
+    }
+
+    val fileName = "${releasePublication.artifactId}-${releasePublication.version}"
+    archiveFileName.set("$fileName.zip")
 }
 
 dependencies {

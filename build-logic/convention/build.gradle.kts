@@ -43,5 +43,9 @@ gradlePlugin {
             id = "icon.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
         }
+        register("jvmUnitTest") {
+            id = "icon.jvm.test"
+            implementationClass = "JvmUnitTestConventionPlugin"
+        }
     }
 }

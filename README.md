@@ -1,6 +1,10 @@
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.devdiestrolopez.icon.core/icon-core-android?label=icon-core-android&style=for-the-badge&logo=android&logoColor=%23FFFFFF)](https://central.sonatype.com/artifact/io.github.devdiestrolopez.icon.core/icon-core-android)
  [![Maven Central](https://img.shields.io/maven-central/v/io.github.devdiestrolopez.icon.compose/icon-compose-android?label=icon-compose-android&style=for-the-badge&logo=jetpackcompose&logoColor=%23FFFFFF&logoSize=auto)](https://central.sonatype.com/artifact/io.github.devdiestrolopez.icon.compose/icon-compose-android)
 
+[![Android Gradle Plugin](https://img.shields.io/badge/AGP-8.12.1-blue?style=for-the-badge)](https://developer.android.com/studio/releases/gradle-plugin)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.2.10-blue?style=for-the-badge&logo=kotlin&logoColor=orange)](https://kotlinlang.org/docs/whatsnew22.html)
+[![Compose BOM](https://img.shields.io/badge/Compose_BOM-2025.08.00-blue?style=for-the-badge&logo=jetpackcompose&logoColor=%23FFFFFF)]([https://developer.android.com/jetpack/compose/bom/releases](https://developer.android.com/develop/ui/compose/bom/bom-mapping))
+
 
 # The Icon Project
 The Icon project provides a modern, type-safe solution for handling icons in Android applications. It's composed of two distinct libraries to ensure a clean separation of concerns and maximize reusability. The `icon-core-android` library defines the core API, while `icon-compose-android` offers a ready-to-use Composable component for Jetpack Compose.
@@ -47,6 +51,18 @@ dependencies {
   implementation("io.github.devdiestrolopez.icon.compose:icon-compose-android:$iconComposeAndroidVersion")
 }
 ```
+
+## 💻 Compatibility
+The project is regularly tested with the following technology stack. For a complete list of dependencies and their versions, refer to each of the libraries' `build.gradle.kts` files and the `libs.versions.toml` inside the `gradle` folder.
+
+| Technology | Version |
+| -------- | ------- |
+| Android Gradle Plugin (AGP) | 8.12.1 |
+| Kotlin | 2.2.10 |
+| Compose BOM | 2025.08.00 |
+| minSdk | 28 |
+| targetSdk | 36 |
+| compileSdk | 36 |
 
 ## 📦 icon-core-android
 This is the central API library. It provides the type-safe `IconResource` sealed interface and its implementations.

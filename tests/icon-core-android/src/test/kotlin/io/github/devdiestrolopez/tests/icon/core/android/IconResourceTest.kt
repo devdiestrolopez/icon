@@ -1,7 +1,10 @@
-package io.github.devdiestrolopez.icon.core.android
+package io.github.devdiestrolopez.tests.icon.core.android
 
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import io.github.devdiestrolopez.icon.core.android.DrawableResource
+import io.github.devdiestrolopez.icon.core.android.IconResource
+import io.github.devdiestrolopez.icon.core.android.ImageVectorResource
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotEquals
 import org.junit.jupiter.api.Nested
@@ -51,7 +54,6 @@ internal class IconResourceTest {
         }
     }
 
-    // --- ImageVectorResource Tests ---
     @Nested
     inner class ImageVectorResourceTest {
 

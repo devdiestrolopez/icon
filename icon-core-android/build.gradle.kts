@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.icon.android.library.compose)
     alias(libs.plugins.icon.android.library)
-    alias(libs.plugins.icon.jvm.test)
     id("maven-publish")
     signing
 }

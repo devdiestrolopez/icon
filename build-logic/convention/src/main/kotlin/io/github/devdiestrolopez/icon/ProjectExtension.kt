@@ -22,16 +22,27 @@ internal fun DependencyHandlerScope.implementation(bundle: Provider<ExternalModu
     add("implementation", bundle)
 }
 
+@JvmName("testImplementationLibrary")
 internal fun DependencyHandlerScope.testImplementation(library: Provider<MinimalExternalModuleDependency>) {
     add("testImplementation", library)
+}
+@JvmName("testImplementationBundle")
+internal fun DependencyHandlerScope.testImplementation(bundle: Provider<ExternalModuleDependencyBundle>) {
+    add("testImplementation", bundle)
 }
 
 internal fun DependencyHandlerScope.testRuntimeOnly(bundle: Provider<ExternalModuleDependencyBundle>) {
     add("testRuntimeOnly", bundle)
 }
 
+@JvmName("androidTestImplementationLibrary")
 internal fun DependencyHandlerScope.androidTestImplementation(library: Provider<MinimalExternalModuleDependency>) {
     add("androidTestImplementation", library)
+}
+
+@JvmName("androidTestImplementationBundle")
+internal fun DependencyHandlerScope.androidTestImplementation(bundle: Provider<ExternalModuleDependencyBundle>) {
+    add("androidTestImplementation", bundle)
 }
 
 internal fun DependencyHandlerScope.debugImplementation(library: Provider<MinimalExternalModuleDependency>) {
